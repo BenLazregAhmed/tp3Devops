@@ -19,7 +19,7 @@ jobs:
 
       # Test Phase: Run the container and execute tests inside it
       - name: Run Container and Execute Tests
-        run: docker run --rm my-docker-app:latest
+        run: docker run -p 8080:80 --rm my-docker-app:latest | curl localhost:8080
 
   deploy:
     runs-on: ubuntu-latest
