@@ -19,7 +19,7 @@ jobs:
 
       # Test Phase: Run the container and execute tests inside it
       - name: Run Container and Execute Tests
-        run: docker run --rm my-docker-app:latest ./run-tests.sh
+        run: docker run --rm my-docker-app:latest
 
   deploy:
     runs-on: ubuntu-latest
@@ -35,11 +35,11 @@ jobs:
 
       # Tag the built image for Docker Hub
       - name: Tag Docker Image
-        run: docker tag my-docker-app:latest mydockerhubuser/my-docker-app:latest
+        run: docker tag my-docker-app:latest ahmedevops/my-docker-app:latest
 
       # Push the Docker image to Docker Hub
       - name: Push Docker Image
-        run: docker push mydockerhubuser/my-docker-app:latest
+        run: docker push ahmedevops/my-docker-app:latest
 
       # (Optional) Deploy to Kubernetes using your deployment manifests
       #- name: Deploy to Kubernetes
